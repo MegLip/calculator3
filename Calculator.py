@@ -1,6 +1,6 @@
 import logging
 
-def add (num1, num2):               #1commit def function
+def add (num1, num2):               #1 def function
     return num1 + num2   
 def substract (num1, num2):
     return num1 - num2
@@ -9,10 +9,10 @@ def multiply (num1,num2):
 def divide (num1, num2):
     return num1/num2
 
-print("Podaj działanie, posługując się odpowiednią liczbą:" '\n' "1 Dodawanie, 2 Odejmowanie, 3 Mnożenie, 4 Dzielenie:")        #2commit choice operation
+print("Podaj działanie, posługując się odpowiednią liczbą:" '\n' "1 Dodawanie, 2 Odejmowanie, 3 Mnożenie, 4 Dzielenie:")        #2 choice operation
 choice = input("Podaj numer działania (1,2,3,4): ")
 
-if __name__ == "__main__":
+if __name__ == "__main__":                          #3 run calculator and result
     if choice in ("1", "2", "3", "4" ):
         num1 = float(input ("Podaj liczbę nr 1: "))
         num2 = float (input ("Podaj liczbę nr 2: "))
@@ -34,3 +34,5 @@ if __name__ == "__main__":
             print(f"Dzielę", num1, "i", num2)
             print(f"Wynik dzielenia to:", (round(divide(num1,num2),2)))
     else : print ("Niepoprawna wartość")
+
+    
