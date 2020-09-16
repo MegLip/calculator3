@@ -1,4 +1,4 @@
-# Calculator
+# calculator
 Modul.4.4
 
 1.commit - Definicja funkcji
