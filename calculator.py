@@ -17,7 +17,7 @@ if __name__ == "__main__":                          #3 run calculator and result
         num1 = float(input ("Podaj liczbę nr 1: "))
         num2 = float(input ("Podaj liczbę nr 2: "))
         num3 = float(input ("Podaj liczbę nr 3: "))
-        print(f"Sprawdzam, czy podane wartości są liczbami:", {type(num1)}, {type(num2)}, {type(num3)})   #sprawdzam, czy podana wartość jest liczbą
+        print(f"Sprawdzam, czy podane wartości są liczbami:", {type(num1)}, {type(num2)}, {type(num3)})     #sprawdzam, czy podana wartość jest liczbą
         if choice == '1':
             logging.info(f"Dodaję {num1} i {num2} i {num3}")
             print(f"Dodaję", num1, "i", num2, "i", num3)
@@ -30,8 +30,7 @@ if __name__ == "__main__":                          #3 run calculator and result
     elif choice in ("2", "4"):
         num1 = float(input ("Podaj liczbę nr 1: "))
         num2 = float(input ("Podaj liczbę nr 2: "))
-        print(f"Sprawdzam, czy podane wartości są liczbami:", {type(num1)}, {type(num2)}) #sprawdzam, czy podana wartość jest liczbą
-        if choice == '1':
+        print(f"Sprawdzam, czy podane wartości są liczbami:", {type(num1)}, {type(num2)})    #sprawdzam, czy podana wartość jest liczbą
         if choice == '2':
             logging.info(f"Odejmuję {num1} i {num2}")
             print(f"Odejmuję", num1, "i", num2)
