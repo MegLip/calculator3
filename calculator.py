@@ -1,11 +1,15 @@
 import logging
 
-def add (num1, num2, num3):               #1 def function
-    return num1 + num2 + num3   
+def add (num1, num2):               #1 def function
+    return num1 + num2
+def add (num1, num2, *args):               
+    return num1 + num2 + sum(args)  
 def substract (num1, num2):
     return num1 - num2
-def multiply (num1, num2, num3):
-    return num1 * num2 * num3
+def multiply (num1, num2):
+    return num1 * num2
+def multiply (num1, num2, *args):
+    return num1 * num2 * sum(args)   
 def divide (num1, num2):
     return num1/num2
 
@@ -16,16 +20,29 @@ if __name__ == "__main__":                          #3 run calculator and result
     if choice in ("1", "3"):
         num1 = float(input ("Podaj liczbę nr 1: "))
         num2 = float(input ("Podaj liczbę nr 2: "))
-        num3 = float(input ("Podaj liczbę nr 3: "))
-        print(f"Sprawdzam, czy podane wartości są liczbami:", {type(num1)}, {type(num2)}, {type(num3)})     #sprawdzam, czy podana wartość jest liczbą
+        print("Podaj następne argumenty lub wciśnij k by zakończyć")
+        args = []
+        
+        while True:
+            arg = input("Podaj kolejną liczbę lub k: ")
+            if arg == "k":
+                break
+            args.append(int(arg))
+        operations = {
+            "add": add,
+            "multiply": multiply
+        }
+        op = input("Co będziemy zrobić? (add, multiply)")
+        result = operations[op](num1, num2, *args)
+        print(f"Sprawdzam, czy podane wartości są liczbami:", {type(num1)}, {type(num2)}, {type([args])})     #sprawdzam, czy podana wartość jest liczbą
         if choice == '1':
-            logging.info(f"Dodaję {num1} i {num2} i {num3}")
-            print(f"Dodaję", num1, "i", num2, "i", num3)
-            print("Wynik dodawania to:", add(num1, num2, num3))
+            logging.info(f"Dodaję {num1} i {num2} i {sum(args)}")
+            print(f"Dodaję", num1, "i", num2, "i", float(sum(args)))
+            print("Wynik dodawania to:", add(num1, num2, sum(args)))
         elif choice == '3':
-            logging.info(f"Mnożę {num1} i {num2} i {num3}")
-            print(f"Mnożę", num1, "i", num2, "i", num3)
-            print(f"Wynik mnożenia to:", multiply(num1, num2, num3))
+            logging.info(f"Mnożę {num1} i {num2} i {sum(args)}")
+            print(f"Mnożę", num1, "i", num2, "i", float(sum(args)))
+            print(f"Wynik mnożenia to:", multiply(num1, num2, sum(args)))
         
     elif choice in ("2", "4"):
         num1 = float(input ("Podaj liczbę nr 1: "))
