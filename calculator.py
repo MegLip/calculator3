@@ -24,7 +24,7 @@ if __name__ == "__main__":                          #3 run calculator and result
         args = []
         
         while True:
-            arg = input("Podaj kolejną liczbę lub k: ")
+            arg = input("Podaj kolejną liczbę lub k: ")         #opcja podania kolejnych argumentów
             if arg == "k":
                 break
             args.append(int(arg))
