@@ -2,7 +2,8 @@ import logging
 logging.basicConfig(level=logging.DEBUG)
 
 
-def add(num1, num2, *args):      # 1 def function
+# 1 def function
+def add(num1, num2, *args):
     return num1 + num2 + sum(args)
 
 
