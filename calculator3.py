@@ -22,3 +22,7 @@ def divide(num1, num2):
     return num1/num2
 
 
+# 2 choice of operation
+operations = {1: add, 2: substract, 3: multiply, 4: divide}
+action = {1: "dodawanie", 2: "odejmowanie", 3: "mnożenie", 4: "dzielenie"}
+
