@@ -30,6 +30,8 @@ action = {1: "dodawanie", 2: "odejmowanie", 3: "mnożenie", 4: "dzielenie"}
 
 # 3 give arguments and run calculator
 def get_data(choice):
+    if choice not in (1, 2, 3, 4):
+        logging.info("Niepoprawna wartość! Wybierz działanie spośród 1,2,3,4")
     num1 = float(input("Podaj składnik nr 1: "))
     num2 = float(input("Podaj składnik nr 2: "))
     args = []
@@ -38,14 +40,8 @@ def get_data(choice):
             arg = input("Podaj liczbę lub k by zakończyć: ")
             if arg == "k":
                 break
-            args.append(float(arg))
-        return num1, num2, args
-    elif choice in (2, 4):
-        return num1, num2, args
-    else:
-        if choice != (1, 2, 3, 4):
-            print("Niepoprawna wartość! Wybierz działanie spośród 1,2,3,4")
-    return result
+            args.append(int(arg))
+    return num1, num2, args
 
 
 if __name__ == "__main__":
